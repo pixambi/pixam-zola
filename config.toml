@@ -4,13 +4,11 @@ base_url = "https://pixambi.github.io/pixam-zola/"
 title = "Pixam Zola"
 description = "Demo website for Pixam Zola"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
 author = "Pixam"
 
 [extra]
-# Put all your custom variables here
+github_repo = "https://github.com/pixambi/pixam-zola"

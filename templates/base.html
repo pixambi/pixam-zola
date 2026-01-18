@@ -10,6 +10,9 @@
     <nav class="navbar">
         <a href="{{ get_url(path='blog') }}">blog</a>
         <a href="{{ get_url(path='projects') }}">projects</a>
+        {% if config.extra.github_repo %}
+        <a href="{{ config.extra.github_repo }}">github</a>
+        {% endif %}
     </nav>
     <main>
         {% block content %}{% endblock content %}
