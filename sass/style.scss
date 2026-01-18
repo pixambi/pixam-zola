@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2rem;
+
+    a {
+        text-decoration: none;
+        color: #333;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+main {
+    padding: 1rem 0;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .date {
+        color: #666;
+        font-size: 0.9rem;
+    }
+}
+
+article {
+    .date {
+        color: #666;
+        font-size: 0.9rem;
+    }
+}
