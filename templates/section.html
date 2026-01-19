@@ -9,6 +9,33 @@
 {% endif %}
 
 <div class="blog-grid">
+{# Show subsections (e.g., project folders) #}
+{% for subsection_path in section.subsections %}
+    {% set subsection = get_section(path=subsection_path) %}
+    <a href="{{ subsection.permalink }}" class="blog-card">
+        <div class="blog-icon">
+            {% if subsection.extra.icon %}
+                <img src="{{ subsection.extra.icon }}" alt="{{ subsection.title }}">
+            {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+            {% endif %}
+        </div>
+        <h2 class="blog-title">{{ subsection.title }}</h2>
+        <p class="blog-description">
+            {% if subsection.description %}
+                {{ subsection.description }}
+            {% elif subsection.content %}
+                {{ subsection.content | striptags | truncate(length=100) }}
+            {% else %}
+                View project
+            {% endif %}
+        </p>
+    </a>
+{% endfor %}
+
+{# Show pages (e.g., blog posts or pages within a project) #}
 {% for page in section.pages %}
     <a href="{{ page.permalink }}" class="blog-card">
         <div class="blog-icon">
