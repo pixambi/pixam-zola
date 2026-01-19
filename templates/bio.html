@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title | default(value="Bio") }} | {{ config.title | default(value="Blog") }}{% endblock title %}
+
+{% block content %}
+<article class="bio-page">
+    <h1>{{ section.title | default(value="Bio") }}</h1>
+    <div class="bio-content">{{ section.content | safe }}</div>
+</article>
+{% endblock content %}
