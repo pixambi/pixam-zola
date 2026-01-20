@@ -51,44 +51,86 @@ body {
     }
 }
 
-/* Home icon is 1st (Red) */
 .nav-home {
     display: flex;
     align-items: center;
 
     svg {
-        width: 24px;
-        height: 24px;
+        width: 80px;
+        height: 50px;
         color: var(--color-text);
-        transition: color 0.2s ease;
     }
 
-    &:hover {
-        text-decoration: none !important;
-        color: var(--color-red);
+    a {
+        cursor: pointer;
 
-        svg {
-            color: var(--color-red);
+        circle {
+            transition: fill 0.15s ease, filter 0.15s ease;
         }
     }
+
+    .btn-red:hover circle {
+        fill: #FF6B6B;
+        filter: brightness(1.2);
+    }
+
+    .btn-yellow:hover circle {
+        fill: #FFE44D;
+        filter: brightness(1.2);
+    }
+
+    .btn-blue:hover circle {
+        fill: #60A5FA;
+        filter: brightness(1.2);
+    }
+
+    .btn-green:hover circle {
+        fill: #4ADE80;
+        filter: brightness(1.2);
+    }
+
+    .btn-select rect,
+    .btn-start rect {
+        transition: filter 0.15s ease;
+    }
+
+    .btn-select:hover rect,
+    .btn-start:hover rect {
+        fill: var(--color-medium-gray);
+    }
+}
+
+/* Highlight controller buttons when corresponding nav link is hovered */
+.navbar:has(.nav-bio:hover) .btn-red circle {
+    fill: #FF6B6B;
+    filter: brightness(1.2);
+}
+
+.navbar:has(.nav-blog:hover) .btn-yellow circle {
+    fill: #FFE44D;
+    filter: brightness(1.2);
+}
+
+.navbar:has(.nav-projects:hover) .btn-blue circle {
+    fill: #60A5FA;
+    filter: brightness(1.2);
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
 
-    /* Alternating SNES button colors starting from 2nd position: Yellow, Blue, Green, Red... */
     a:nth-child(4n+1):hover {
-        color: var(--color-yellow);
+        color: var(--color-red);
     }
     a:nth-child(4n+2):hover {
-        color: var(--color-blue);
+        color: var(--color-yellow);
     }
     a:nth-child(4n+3):hover {
-        color: var(--color-green);
+        color: var(--color-blue);
     }
     a:nth-child(4n):hover {
-        color: var(--color-red);
+        color: var(--color-green);
     }
 }
 
