@@ -8,6 +8,13 @@
     {% if page.date %}
     <p class="date">{{ page.date | date(format="%Y-%m-%d") }}</p>
     {% endif %}
+    {% if page.taxonomies.tags %}
+    <div class="page-tags">
+        {% for tag in page.taxonomies.tags %}
+        <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}" class="tag-chip">{{ tag }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
     {{ page.content | safe }}
 </article>
 {% endblock content %}
