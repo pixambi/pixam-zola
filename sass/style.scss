@@ -4,6 +4,7 @@
     --color-yellow: #FFD700;
     --color-blue: #0061C5;
     --color-green: #00A651;
+    --color-purple: #9B59B6;
     --color-light-gray: #E8E8E8;
     --color-dark-gray: #6E6E6E;
     --color-medium-gray: #9E9E9E;
@@ -14,6 +15,7 @@
     --color-yellow-hover: rgba(255, 215, 0, 0.3);
     --color-blue-hover: rgba(0, 97, 197, 0.3);
     --color-green-hover: rgba(0, 166, 81, 0.3);
+    --color-purple-hover: rgba(155, 89, 182, 0.3);
 
     /* Semantic color mappings */
     --color-text: var(--color-black);
@@ -313,6 +315,46 @@ main {
 
 .section-projects .blog-card:hover {
     background-color: var(--color-blue-hover);
+}
+
+.section-tags .blog-card:hover {
+    background-color: var(--color-purple-hover);
+}
+
+.tags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.tag-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-light-gray);
+    border-radius: 2rem;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: var(--color-purple-hover);
+        transform: translateY(-2px);
+    }
+
+    .tag-name {
+        font-weight: 600;
+    }
+
+    .tag-count {
+        font-size: 0.85rem;
+        color: var(--color-text-secondary);
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 0.1rem 0.5rem;
+        border-radius: 1rem;
+    }
 }
 
 .blog-icon {

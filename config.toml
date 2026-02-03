@@ -8,6 +8,11 @@ compile_sass = true
 
 build_search_index = false
 
+# Taxonomies
+taxonomies = [
+    { name = "tags", feed = false }
+]
+
 author = "Pixam"
 
 [extra]
