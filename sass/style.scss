@@ -415,6 +415,45 @@ main {
     }
 }
 
+/* Required for Giallo (Zola's syntax highlighter) to render correctly */
+.giallo-l {
+    display: inline-block;
+    min-height: 1lh;
+    width: 100%;
+}
+
+.giallo-ln {
+    display: inline-block;
+    user-select: none;
+    margin-right: 0.4em;
+    padding: 0.4em;
+    min-width: 3ch;
+    text-align: right;
+    opacity: 0.8;
+}
+
+pre {
+    padding: 1rem;
+    border: 2px solid var(--color-dark-gray);
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+
+    code {
+        background: none;
+        padding: 0;
+        border: none;
+    }
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--color-light-gray);
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
 article {
     .date {
         color: var(--color-text-secondary);
